@@ -1,5 +1,9 @@
 function chirp(n){
-  // FIX ME
+  n--;
+  if (n === 0){
+    return "chirp ";
+  }
+  return chirp(n) + "chirp ";
 }
 
 $(document).ready(function(){
