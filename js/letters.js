@@ -13,10 +13,19 @@ var counter = {
   "q" : 0,  "r" : 0,  "s" : 0,  "t" : 0,
   "u" : 0,  "v" : 0,  "w" : 0,  "x" : 0,
   "y" : 0,  "z" : 0
-}
+};
 
 function countLetters(counter, sample_text){
-  // FIX ME
+  if (sample_text.length === 0) {
+    return;
+  }
+  sample_text = sample_text.toLowerCase();
+  let eachLetter = sample_text.slice(0,1);
+  if (counter.hasOwnProperty(eachLetter)) {
+    counter[eachLetter] ++;
+  }
+  sample_text = sample_text.slice(1, sample_text.length);
+  return countLetters(counter, sample_text);
 }
 
 $(document).ready(function(){
